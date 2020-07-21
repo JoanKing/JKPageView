@@ -3,7 +3,7 @@ Swift组件的标题滚动组件
 
 - 导入方式
     
-    pod 'JKPageView'
+         pod 'JKPageView'
 
 
 - 使用方式如下：
