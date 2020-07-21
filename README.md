@@ -4,11 +4,11 @@ Swift组件的标题滚动组件
 使用方式如下：
 
 
-        // 1.标题
-        let titles = ["游戏", "娱乐活动", "趣玩", "美女才艺", "颜值报表", "日常活动"]
+    // 1.标题
+    let titles = ["游戏", "娱乐活动", "趣玩", "美女才艺", "颜值报表", "日常活动"]
         
-        // 2.所有的子控制器
-        var childVcs = [UIViewController]()
+    // 2.所有的子控制器
+    var childVcs = [UIViewController]()
         
         for _ in 0..<titles.count {
             let vc = UIViewController()
