@@ -8,7 +8,7 @@ Swift组件的标题滚动组件
 
 - 使用方式如下：
 
-    导入 import JKPageView 即可使用
+    导入 `import JKPageView` 即可使用
 
 
       // 1.标题
