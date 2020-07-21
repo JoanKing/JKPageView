@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		1C2161556F19A94303B7A18671ED3197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		1DF80EC71A202F1CC57045C36654951E /* Pods-JKPageView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA4BAAAFA3E693A199F699F292DE42 /* Pods-JKPageView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		213DA4870ECAA1DDD8BF451D3CEAFEA1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1645665C35CEC5890DBB1D28913D51AF /* UIColor+Extension.swift */; };
 		2D54651AA43D9A03AB309AFA178D3EED /* JKPageView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDDD4289A76A7BEAAF8EA1C9DF7BDCE /* JKPageView-dummy.m */; };
-		3757697547B7C2A92AA745BB4E214942 /* JKContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B0D11A75C32489AB6452701F99B34 /* JKContentView.swift */; };
-		3B2FEAE82ED8FA1A65BAD8E27D838A33 /* JKTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D680DAEC6E59E40F6DAB4DF051697 /* JKTitleStyle.swift */; };
 		A4BC57FAB069850B7544FFECD9E1FEFD /* JKPageView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD4EFF08E0B2402083D5AB4368A450E /* JKPageView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D391D35410CCC830BEF356C7B89B9B74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		DF959B32CED781D0EAA50966A7525FF7 /* JKTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F530F9782B0B4BD86D5FB14D3505B29 /* JKTitleView.swift */; };
-		E4FC56FB24059D610ACA233A6CA54059 /* JKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AE2B0D151240EFFC02B0CBC6D1A69 /* JKPageView.swift */; };
+		E28A70CD24C70BEA0066AF00 /* JKTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28A70C824C70BEA0066AF00 /* JKTitleView.swift */; };
+		E28A70CE24C70BEA0066AF00 /* JKContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28A70C924C70BEA0066AF00 /* JKContentView.swift */; };
+		E28A70CF24C70BEA0066AF00 /* JKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28A70CA24C70BEA0066AF00 /* JKPageView.swift */; };
+		E28A70D024C70BEA0066AF00 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28A70CB24C70BEA0066AF00 /* UIColor+Extension.swift */; };
+		E28A70D124C70BEA0066AF00 /* JKTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28A70CC24C70BEA0066AF00 /* JKTitleStyle.swift */; };
 		E8D1D8BDFD429967EDB60C4D33F20A06 /* Pods-JKPageView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C969CB1FA29E50523D1FB2EA2D88445F /* Pods-JKPageView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB38265B4D861DAF7A563C9AF4AF6CE8 /* Pods-JKPageView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE61E34888FFB4CC3FF1C1E0E8B32927 /* Pods-JKPageView_Example-dummy.m */; };
 		EE5468B4B0B6A79E5008899607F38909 /* Pods-JKPageView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 376920CAF7EAE5D292D8B90D51CB6CA7 /* Pods-JKPageView_Tests-dummy.m */; };
@@ -44,39 +44,39 @@
 		01287A984B7DFE0825D6FB1C105EEFA8 /* Pods-JKPageView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JKPageView_Example-Info.plist"; sourceTree = "<group>"; };
 		029EA1B56971C5D960210B51E8DBC1C4 /* Pods-JKPageView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JKPageView_Tests.modulemap"; sourceTree = "<group>"; };
 		0853CB37271715C08949C4CFC63CF493 /* Pods-JKPageView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JKPageView_Tests-Info.plist"; sourceTree = "<group>"; };
-		1645665C35CEC5890DBB1D28913D51AF /* UIColor+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "JKPageView/Classes/UIColor+Extension.swift"; sourceTree = "<group>"; };
 		167A2DE2A95A11DB0399B47DFE0A034F /* Pods-JKPageView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JKPageView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		25D79EFA6D5016389C8E1D4FA166F176 /* Pods-JKPageView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JKPageView_Example.modulemap"; sourceTree = "<group>"; };
-		288E8C8995882AAA6FA417340D59C539 /* JKPageView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = JKPageView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		288E8C8995882AAA6FA417340D59C539 /* JKPageView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = JKPageView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		376920CAF7EAE5D292D8B90D51CB6CA7 /* Pods-JKPageView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JKPageView_Tests-dummy.m"; sourceTree = "<group>"; };
-		3B9DE7BB1564ED3C7A8A79E1D5BBEC2E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		464747CEB6F2C107920104FCCAC4636C /* JKPageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JKPageView.framework; path = JKPageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B9DE7BB1564ED3C7A8A79E1D5BBEC2E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		464747CEB6F2C107920104FCCAC4636C /* JKPageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JKPageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD4EFF08E0B2402083D5AB4368A450E /* JKPageView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JKPageView-umbrella.h"; sourceTree = "<group>"; };
 		519F41310C7243F03E25E96E49E7CF05 /* JKPageView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JKPageView.modulemap; sourceTree = "<group>"; };
 		52093D006972C19E07F006A3EDBC6565 /* Pods-JKPageView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JKPageView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5E8D680DAEC6E59E40F6DAB4DF051697 /* JKTitleStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JKTitleStyle.swift; path = JKPageView/Classes/JKTitleStyle.swift; sourceTree = "<group>"; };
 		6AC6427132EFFDC9D372F1632EA514B5 /* Pods-JKPageView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JKPageView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6E27B414F99569BD1D521419739624E9 /* Pods-JKPageView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JKPageView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6F530F9782B0B4BD86D5FB14D3505B29 /* JKTitleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JKTitleView.swift; path = JKPageView/Classes/JKTitleView.swift; sourceTree = "<group>"; };
-		7CA0BFAF1B70FB4098ABF1D90D948D38 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		7F0B0D11A75C32489AB6452701F99B34 /* JKContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JKContentView.swift; path = JKPageView/Classes/JKContentView.swift; sourceTree = "<group>"; };
+		7CA0BFAF1B70FB4098ABF1D90D948D38 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8C0C33E69E0BB483A2454C041A9276CF /* Pods-JKPageView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JKPageView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		8DDDD4289A76A7BEAAF8EA1C9DF7BDCE /* JKPageView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JKPageView-dummy.m"; sourceTree = "<group>"; };
 		9D463FDC9042A09E8FDCE6A40AA5A056 /* JKPageView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JKPageView-prefix.pch"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A11486F807199EF88C5909F7A705A4EF /* Pods-JKPageView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JKPageView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A6CCE84C992D09E6A2C77A706FD786FB /* JKPageView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JKPageView.xcconfig; sourceTree = "<group>"; };
-		AE2AE2B0D151240EFFC02B0CBC6D1A69 /* JKPageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JKPageView.swift; path = JKPageView/Classes/JKPageView.swift; sourceTree = "<group>"; };
-		AE4824E955030FE14AB29FB710DC5F87 /* Pods_JKPageView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JKPageView_Example.framework; path = "Pods-JKPageView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4824E955030FE14AB29FB710DC5F87 /* Pods_JKPageView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JKPageView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08C930B8F1F6520F19EF26074B3979C /* Pods-JKPageView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JKPageView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B093CC58F002BF866A34DD601C9F242C /* Pods_JKPageView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JKPageView_Tests.framework; path = "Pods-JKPageView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B093CC58F002BF866A34DD601C9F242C /* Pods_JKPageView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JKPageView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EA4BAAAFA3E693A199F699F292DE42 /* Pods-JKPageView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JKPageView_Example-umbrella.h"; sourceTree = "<group>"; };
 		BA264C49A0DA62640FBA1E86A80EDE52 /* Pods-JKPageView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JKPageView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C577087B01081A959AAF3C6BC18D47E9 /* JKPageView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JKPageView-Info.plist"; sourceTree = "<group>"; };
 		C78D04D5A4B844C0F60F1480A9BEC2B0 /* Pods-JKPageView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JKPageView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		C969CB1FA29E50523D1FB2EA2D88445F /* Pods-JKPageView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JKPageView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		CE61E34888FFB4CC3FF1C1E0E8B32927 /* Pods-JKPageView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JKPageView_Example-dummy.m"; sourceTree = "<group>"; };
+		E28A70C824C70BEA0066AF00 /* JKTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JKTitleView.swift; path = JKPageView/Classes/JKTitleView.swift; sourceTree = "<group>"; };
+		E28A70C924C70BEA0066AF00 /* JKContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JKContentView.swift; path = JKPageView/Classes/JKContentView.swift; sourceTree = "<group>"; };
+		E28A70CA24C70BEA0066AF00 /* JKPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JKPageView.swift; path = JKPageView/Classes/JKPageView.swift; sourceTree = "<group>"; };
+		E28A70CB24C70BEA0066AF00 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "JKPageView/Classes/UIColor+Extension.swift"; sourceTree = "<group>"; };
+		E28A70CC24C70BEA0066AF00 /* JKTitleStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JKTitleStyle.swift; path = JKPageView/Classes/JKTitleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,11 +177,11 @@
 		A4E6D1B2870CE0F79A873EC878CCFD89 /* JKPageView */ = {
 			isa = PBXGroup;
 			children = (
-				7F0B0D11A75C32489AB6452701F99B34 /* JKContentView.swift */,
-				AE2AE2B0D151240EFFC02B0CBC6D1A69 /* JKPageView.swift */,
-				5E8D680DAEC6E59E40F6DAB4DF051697 /* JKTitleStyle.swift */,
-				6F530F9782B0B4BD86D5FB14D3505B29 /* JKTitleView.swift */,
-				1645665C35CEC5890DBB1D28913D51AF /* UIColor+Extension.swift */,
+				E28A70C924C70BEA0066AF00 /* JKContentView.swift */,
+				E28A70CA24C70BEA0066AF00 /* JKPageView.swift */,
+				E28A70CC24C70BEA0066AF00 /* JKTitleStyle.swift */,
+				E28A70C824C70BEA0066AF00 /* JKTitleView.swift */,
+				E28A70CB24C70BEA0066AF00 /* UIColor+Extension.swift */,
 				54B7B363BB3BC92E9E3A316D6ED27CBB /* Pod */,
 				4E2603BC790A419522B33FA35B95F6D8 /* Support Files */,
 			);
@@ -327,6 +327,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					8DFC28279BF6FD897074569686CE2453 = {
+						LastSwiftMigration = 1160;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -385,12 +390,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3757697547B7C2A92AA745BB4E214942 /* JKContentView.swift in Sources */,
+				E28A70CF24C70BEA0066AF00 /* JKPageView.swift in Sources */,
+				E28A70CD24C70BEA0066AF00 /* JKTitleView.swift in Sources */,
+				E28A70CE24C70BEA0066AF00 /* JKContentView.swift in Sources */,
 				2D54651AA43D9A03AB309AFA178D3EED /* JKPageView-dummy.m in Sources */,
-				E4FC56FB24059D610ACA233A6CA54059 /* JKPageView.swift in Sources */,
-				3B2FEAE82ED8FA1A65BAD8E27D838A33 /* JKTitleStyle.swift in Sources */,
-				DF959B32CED781D0EAA50966A7525FF7 /* JKTitleView.swift in Sources */,
-				213DA4870ECAA1DDD8BF451D3CEAFEA1 /* UIColor+Extension.swift in Sources */,
+				E28A70D024C70BEA0066AF00 /* UIColor+Extension.swift in Sources */,
+				E28A70D124C70BEA0066AF00 /* JKTitleStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,8 +512,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -648,6 +652,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6CCE84C992D09E6A2C77A706FD786FB /* JKPageView.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -668,6 +673,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -713,6 +719,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6CCE84C992D09E6A2C77A706FD786FB /* JKPageView.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
