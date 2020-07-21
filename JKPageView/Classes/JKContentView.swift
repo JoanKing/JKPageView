@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Foundation
 /// 标识
 private let kContentCellID = "kContentCellID"
 
@@ -68,7 +68,6 @@ class JKContentView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 extension JKContentView {
@@ -76,7 +75,7 @@ extension JKContentView {
     fileprivate func setupUI() {
         // 1.将所有的子控制器添加到父控制器中
         for childVc in childVcs {
-            parentVc.addChildViewController(childVc)
+            parentVc.addChild(childVc)
         }
         
         // 2.添加UICollectionView用于展示内容
