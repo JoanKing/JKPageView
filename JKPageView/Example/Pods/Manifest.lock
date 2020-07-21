@@ -1,0 +1,16 @@
+PODS:
+  - JKPageView (0.1.0)
+
+DEPENDENCIES:
+  - JKPageView (from `../`)
+
+EXTERNAL SOURCES:
+  JKPageView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JKPageView: ed63effb04ac9ac458a1cccfffcae6e85518940f
+
+PODFILE CHECKSUM: 2b2c1e7d938b5e593cf22633f63f7a528f471756
+
+COCOAPODS: 1.8.4

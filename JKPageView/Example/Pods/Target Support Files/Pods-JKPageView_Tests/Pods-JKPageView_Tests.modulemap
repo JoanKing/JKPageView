@@ -1,0 +1,6 @@
+framework module Pods_JKPageView_Tests {
+  umbrella header "Pods-JKPageView_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

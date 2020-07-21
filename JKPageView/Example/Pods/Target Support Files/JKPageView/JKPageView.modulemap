@@ -1,0 +1,6 @@
+framework module JKPageView {
+  umbrella header "JKPageView-umbrella.h"
+
+  export *
+  module * { export * }
+}
