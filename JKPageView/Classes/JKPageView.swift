@@ -78,7 +78,6 @@ public extension JKPageView {
     fileprivate func setupContentView() {
         let contentFrame = CGRect(x: 0, y: style.titleHeight, width: bounds.width, height: bounds.height - style.titleHeight)
         let contentView = JKContentView(frame: contentFrame, childVcs: childVcs, parentVc: parentVc)
-        contentView.backgroundColor = UIColor.JKRandomColor()
         addSubview(contentView)
         
         // 让 content 成为 titleView 的代理

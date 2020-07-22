@@ -38,25 +38,25 @@ public extension UIColor {
     }
     
     // MARK:- RGBA的颜色设置
-    static func JKColor(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1.0) -> UIColor {
+    static func color(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1.0) -> UIColor {
         return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
     }
     
     // MARK:- 随机色
     /// 随机色
     /// - Returns: 返回颜色
-    static func JKRandomColor() -> UIColor {
-        return JKColor(r: CGFloat(arc4random()%256) , g: CGFloat(arc4random()%256), b: CGFloat(arc4random()%256), a: 1.0)
+    static func randomColor() -> UIColor {
+        return color(r: CGFloat(arc4random()%256) , g: CGFloat(arc4random()%256), b: CGFloat(arc4random()%256), a: 1.0)
     }
     
     // MARK:- 十六进制颜色的设置
     static func hexColor(hex: String, alpha: CGFloat = 1.0) -> UIColor {
-        let color = hexCustomColor(hex: hex)
-        guard let r = color.r, let g = color.g, let b = color.b else {
+        let newColor = hexCustomColor(hex: hex)
+        guard let r = newColor.r, let g = newColor.g, let b = newColor.b else {
             assert(false, "颜色值有误")
             return .white
         }
-        return JKColor(r: r, g: g, b: b, a: alpha)
+        return color(r: r, g: g, b: b, a: alpha)
     }
     
     // MARK: 获取颜色的渐变的 RGB
@@ -125,21 +125,21 @@ extension UIColor {
     
     // MARK: 背景灰色
     static func JKGlobalColor() -> UIColor {
-        return JKColor(r: 240, g: 240, b: 240, a: 1)
+        return color(r: 240, g: 240, b: 240, a: 1)
     }
     
     // MARK: 红色
     static func JKGlobalRedColor() -> UIColor {
-        return JKColor(r: 245, g: 80, b: 83, a: 1.0)
+        return color(r: 245, g: 80, b: 83, a: 1.0)
     }
     
     // MARK: 字体的灰色
     static func JKTextGayColor() -> UIColor {
-        return JKColor(r: 140, g: 140, b: 140, a: 1.0)
+        return color(r: 140, g: 140, b: 140, a: 1.0)
     }
     
     // MARK: 字体的蓝色
     static func JKTextzhuBlueColor() -> UIColor {
-        return JKColor(r: 0, g: 150, b: 255, a: 1.0)
+        return color(r: 0, g: 150, b: 255, a: 1.0)
     }
 }

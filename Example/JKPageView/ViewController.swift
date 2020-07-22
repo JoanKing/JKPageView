@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         
         for _ in 0..<titles.count {
             let vc = UIViewController()
-            vc.view.backgroundColor = UIColor.JKRandomColor()
+            vc.view.backgroundColor = UIColor.randomColor()
             childVcs.append(vc)
         }
         

@@ -26,9 +26,9 @@ public class JKTitleStyle: NSObject {
     /// 头部 titleView 的背景色
     public var titleViewBackgroundColor: UIColor = UIColor.white
     /// 默认的颜色
-    public var normalColor: UIColor = UIColor.JKColor(r: 0, g: 0, b: 0)
+    public var normalColor: UIColor = UIColor.color(r: 0, g: 0, b: 0)
     /// 选中的颜色
-    public var selectedColor: UIColor = UIColor.JKColor(r: 255, g: 127, b: 0)
+    public var selectedColor: UIColor = UIColor.color(r: 255, g: 127, b: 0)
     /// 标题的大小
     public var fontSize: CGFloat = 15.0
     /// 是否可以滚动

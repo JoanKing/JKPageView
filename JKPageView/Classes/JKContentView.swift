@@ -91,8 +91,7 @@ extension JKContentView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kContentCellID, for: indexPath)
-        cell.backgroundColor = UIColor.JKRandomColor()
-        
+      
         // 移除掉之前的，防止重复添加
         for subview in cell.contentView.subviews {
             subview.removeFromSuperview()

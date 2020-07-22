@@ -330,8 +330,8 @@ extension JKTitleView: JKContentViewDelegate {
         let oldlabel = titleLabels[sourceIndex]
         
         // 2.颜色渐变
-        targetLabel.textColor = UIColor.JKColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
-        oldlabel.textColor = UIColor.JKColor(r: selectedRGB.0 - deltaRGB.0 * progress, g: selectedRGB.1 - deltaRGB.1 * progress, b: selectedRGB.2 - deltaRGB.2 * progress)
+        targetLabel.textColor = UIColor.color(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
+        oldlabel.textColor = UIColor.color(r: selectedRGB.0 - deltaRGB.0 * progress, g: selectedRGB.1 - deltaRGB.1 * progress, b: selectedRGB.2 - deltaRGB.2 * progress)
         
         // 3.记录最新的index
         currentIndex = targetIndex
