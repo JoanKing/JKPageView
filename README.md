@@ -42,7 +42,7 @@ Swift组件的标题滚动组件
       
 - 使用方式二，如下：
 
- ![JKPageCollectionView](https://upload-images.jianshu.io/upload_images/1728484-b78ac5b1f8d3789f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+       ![JKPageCollectionView](https://upload-images.jianshu.io/upload_images/1728484-b78ac5b1f8d3789f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
         let titles = ["推荐", "LooK直播", "官方", "饭圈营业", "现场", "翻唱", "广场", "舞蹈"]
         
