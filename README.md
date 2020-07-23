@@ -44,21 +44,21 @@ Swift组件的标题滚动组件
 
     ![JKPageCollectionView](https://upload-images.jianshu.io/upload_images/1728484-b78ac5b1f8d3789f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-        let titles = ["推荐", "LooK直播", "官方", "饭圈营业", "现场", "翻唱", "广场", "舞蹈"]
+      let titles = ["推荐", "LooK直播", "官方", "饭圈营业", "现场", "翻唱", "广场", "舞蹈"]
         
-        let style = JKTitleStyle()
-        style.isScrollEnable = true
-        style.isShowScrollLine = true
-        style.collectionViewBackgroundColor = .yellow
+      let style = JKTitleStyle()
+      style.isScrollEnable = true
+      style.isShowScrollLine = true
+      style.collectionViewBackgroundColor = .yellow
         
-        let layout = JKPageCollectionViewLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 20
+      let layout = JKPageCollectionViewLayout()
+      layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+      layout.minimumLineSpacing = 10
+      layout.minimumInteritemSpacing = 20
         
-        let pageCollectionView = JKPageCollectionView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 200), titles: titles, style: style, isTitleInTop: false, layout: layout)
-        pageCollectionView.dataSource = self
-        pageCollectionView.register(cell: UICollectionViewCell.self, identifier: kAnchorViewControllerCellID)
-        view.addSubview(pageCollectionView)
+      let pageCollectionView = JKPageCollectionView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 200), titles: titles, style: style, isTitleInTop: false, layout: layout)
+      pageCollectionView.dataSource = self
+      pageCollectionView.register(cell: UICollectionViewCell.self, identifier: kAnchorViewControllerCellID)
+      view.addSubview(pageCollectionView)
         
        
