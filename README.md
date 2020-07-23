@@ -1,15 +1,16 @@
-# JKPageView
+## JKPageView
 Swift组件的标题滚动组件
 
-- 导入方式
-    
-      pod 'JKPageView'
+## <a id="How_to_use_JKPageView"></a>How to use JKPageView
 
+* Installation with CocoaPods：`pod 'JKPageView'`
+* Installation with [Carthage](https://github.com/Carthage/Carthage)：`github "JoanKing/JKPageView"`
 
-- 使用方式如下：
+       主要类： JKPageView、JKPageCollectionView
 
-    导入 `import JKPageView` 即可使用
+- 使用方式一，如下：
 
+     ![](https://upload-images.jianshu.io/upload_images/1728484-648cd156898b86a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
       // 1.标题
       let titles = ["游戏", "娱乐活动", "趣玩", "美女才艺", "颜值报表", "日常活动"]
@@ -38,3 +39,35 @@ Swift组件的标题滚动组件
       let pageView = JKPageView(frame: pageFrame, titles: titles, childVcs: childVcs, parentVc: self, style: style)
       pageView.delegate = self
       view.addSubview(pageView)
+      
+- 使用方式二，如下：
+
+    ![JKPageCollectionView](https://upload-images.jianshu.io/upload_images/1728484-b78ac5b1f8d3789f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+      let titles = ["推荐", "LooK直播", "官方", "饭圈营业", "现场", "翻唱", "广场", "舞蹈"]
+        
+      let style = JKTitleStyle()
+      style.isScrollEnable = true
+      style.isShowScrollLine = true
+      style.collectionViewBackgroundColor = .yellow
+        
+      let layout = JKPageCollectionViewLayout()
+      layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+      layout.minimumLineSpacing = 10
+      layout.minimumInteritemSpacing = 20
+        
+      let pageCollectionView = JKPageCollectionView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 200), titles: titles, style: style, isTitleInTop: false, layout: layout)
+      pageCollectionView.dataSource = self
+      pageCollectionView.register(cell: UICollectionViewCell.self, identifier: kAnchorViewControllerCellID)
+      view.addSubview(pageCollectionView)
+        
+## JKPageView 使用注意点
+  
+- JKTitleStyle 样式里面的标题的选中颜色和未选中的颜色必须是 RGB，原因是要做文字颜色的渐变
+    
+      /// 默认的颜色
+      public var normalColor: UIColor = UIColor.color(r: 0, g: 0, b: 0)
+      /// 选中的颜色
+      public var selectedColor: UIColor = UIColor.color(r: 255, g: 127, b: 0)
+  
+  
