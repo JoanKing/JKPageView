@@ -161,7 +161,6 @@ extension JKPageCollectionView: UICollectionViewDelegate {
 
 extension JKPageCollectionView: JKTitleViewDelegate {
     func clickTitleView(_ pageView: JKTitleView, targetIndex: Int) {
-        print("点击的第 \(targetIndex) 个")
         collectionView.scrollToItem(at: IndexPath(item: 0, section: targetIndex), at: .left, animated: true)
         collectionView.contentOffset.x -= layout.sectionInset.left
     }

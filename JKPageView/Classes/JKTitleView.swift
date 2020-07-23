@@ -318,11 +318,7 @@ extension JKTitleView {
 // MARK:- 实现页面滚动的代理
 extension JKTitleView: JKContentViewDelegate {
     func scrollContentView(sourceIndex: Int, targetIndex: Int, progress: CGFloat) {
-        
-        print("sourceIndex == \(sourceIndex)")
-        print("targetIndex == \(targetIndex)")
-        print("progress == \(progress)")
-        
+
         // 1.获取Label
         // 获取点击的 title 的 Label
         let targetLabel = titleLabels[targetIndex]
