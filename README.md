@@ -63,7 +63,7 @@ Swift组件的标题滚动组件
         
 ## JKPageView 使用注意点
   
-- JKTitleStyle 样式里面的标题的选中颜色和未选中的颜色必须是 RGB，原因是要做文字的颜色渐变
+- JKTitleStyle 样式里面的标题的选中颜色和未选中的颜色必须是 RGB，原因是要做文字颜色的渐变
     
       /// 默认的颜色
       public var normalColor: UIColor = UIColor.color(r: 0, g: 0, b: 0)
