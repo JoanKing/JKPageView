@@ -15,6 +15,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		E29D728E24CA4CFC0064845F /* JKPageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D728D24CA4CFC0064845F /* JKPageViewViewController.swift */; };
+		E29D729024CA4D0C0064845F /* JKPageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D728F24CA4D0C0064845F /* JKPageCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		6E9E8EF0A04EAEEA674015BD /* Pods-JKPageView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKPageView_Tests.release.xcconfig"; path = "Target Support Files/Pods-JKPageView_Tests/Pods-JKPageView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		ABC37AA2957660779D4C5362 /* Pods-JKPageView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKPageView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-JKPageView_Tests/Pods-JKPageView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D44EAD0166AA5E97B0660BF7 /* Pods-JKPageView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKPageView_Example.debug.xcconfig"; path = "Target Support Files/Pods-JKPageView_Example/Pods-JKPageView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E29D728D24CA4CFC0064845F /* JKPageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKPageViewViewController.swift; sourceTree = "<group>"; };
+		E29D728F24CA4D0C0064845F /* JKPageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKPageCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				E29D728D24CA4CFC0064845F /* JKPageViewViewController.swift */,
+				E29D728F24CA4D0C0064845F /* JKPageCollectionViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -334,7 +340,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				E29D728E24CA4CFC0064845F /* JKPageViewViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				E29D729024CA4D0C0064845F /* JKPageCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

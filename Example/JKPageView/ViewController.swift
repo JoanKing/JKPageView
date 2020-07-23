@@ -8,93 +8,79 @@
 
 import UIKit
 import JKPageView
-/// 标识
-private let kAnchorViewControllerCellID = "AnchorViewController"
+
+fileprivate let kViewControllerCellID = "kViewControllerCellID"
+
 class ViewController: UIViewController {
 
     var titles: [String] = []
     
+    lazy var tableView : UITableView = {
+        let tableView = UITableView(frame:CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height - UIApplication.shared.statusBarFrame.height - 44), style: .grouped)
+        if #available(iOS 11, *) {
+            tableView.estimatedSectionFooterHeight = 0
+            tableView.estimatedSectionHeaderHeight = 0
+            tableView.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false;
+        }
+        // tableview的背景色
+        tableView.backgroundColor = UIColor.white
+        // tableview挂代理
+        tableView.delegate = self
+        tableView.dataSource = self
+        // tableview的分割方式
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: kViewControllerCellID)
+        return tableView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        self.view.backgroundColor = .green
-        
-        titles = ["推荐", "LooK直播", "官方", "饭圈营业", "现场", "翻唱", "广场", "舞蹈"]
-        
-        let style = JKTitleStyle()
-        style.isScrollEnable = true
-        style.isShowScrollLine = true
-        style.collectionViewBackgroundColor = .yellow
-        
-        let layout = JKPageCollectionViewLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 20
-        
-        let pageCollectionView = JKPageCollectionView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 200), titles: titles, style: style, isTitleInTop: false, layout: layout)
-        pageCollectionView.dataSource = self
-        pageCollectionView.register(cell: UICollectionViewCell.self, identifier: kAnchorViewControllerCellID)
-        view.addSubview(pageCollectionView)
+        self.title = "JKPageView的使用"
+        self.edgesForExtendedLayout = []
+        self.view.backgroundColor = .white
+        titles = ["JKPageView样式", "JKPageCollectionView样式"]
+        self.view.addSubview(tableView)
     }
 }
 
-// MARK:- JKPageCollectionViewDataSoure 代理
-extension ViewController: JKPageCollectionViewDataSoure {
-    func pageNumberOfSections(in collectionView: UICollectionView) -> Int {
-        return titles.count
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
-    func pageCollectionView(pageCollectionView: JKPageCollectionView, collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 19
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        titles.count
     }
-    
-    func pageCollectionView(pageCollectionView: JKPageCollectionView, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kAnchorViewControllerCellID, for: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kViewControllerCellID, for: indexPath)
         cell.backgroundColor = UIColor.randomColor()
+        cell.textLabel?.text = titles[indexPath.row]
         return cell
     }
     
-    func pageCollectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("点击的第 \(indexPath.section) 组 第 \(indexPath.row) 个")
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
     }
-}
-
-extension ViewController {
-    func test1() {
-        // 1.标题
-        let titles = ["推荐", "LooK直播", "官方", "饭圈营业", "现场", "翻唱", "广场", "舞蹈"]
-        
-        // 2.所有的子控制器
-        var childVcs = [UIViewController]()
-        
-        for _ in 0..<titles.count {
-            let vc = UIViewController()
-            vc.view.backgroundColor = UIColor.randomColor()
-            childVcs.append(vc)
-        }
-        
-        let style = JKTitleStyle()
-        style.isScrollEnable = true
-        style.isShowScrollLine = true
-        style.isNeedScale = false
-        style.isShowSplitLine = true
-        style.splitLineHeight = 1
-        style.showStyle = .coverStyle
-        
-        // 3.pageView的frame
-        let pageFrame = CGRect(x: 0, y: 64, width: view.bounds.width, height: view.bounds.height - 64)
-        
-        // 4.创建JKPageView，并且添加到控制器 view 中
-        let pageView = JKPageView(frame: pageFrame, titles: titles, childVcs: childVcs, parentVc: self, style: style)
-        pageView.delegate = self
-        view.addSubview(pageView)
-    }
-}
-
-extension ViewController: JKPageViewDelegate {
     
-    func clickTitleView(targetIndex: Int) {
-        print("---------点击了：第 \(targetIndex) 个")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let title = titles[indexPath.row]
+        if title == "JKPageView样式" {
+            let pageViewViewController = JKPageViewViewController()
+            navigationController?.pushViewController(pageViewViewController, animated: true)
+        } else if title == "JKPageCollectionView样式" {
+            let pageViewController = JKPageCollectionViewController()
+            navigationController?.pushViewController(pageViewController, animated: true)
+        } else {
+            print("----等待更新----")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
     }
 }
+
+

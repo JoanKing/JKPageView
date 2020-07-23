@@ -79,7 +79,7 @@ public class JKTitleStyle: NSObject {
     /// UIPageControl 的高度
     public var pageControlHeight: CGFloat = 20.0
     /// UIPageControl当前的颜色
-    public var pageControlCurrentPageColor: UIColor = UIColor.white
+    public var pageControlCurrentPageColor: UIColor = UIColor.gray
     /// UIPageControl没选中的颜色
     public var pageIndicatorTintColor: UIColor = UIColor.white
     
