@@ -9,6 +9,7 @@ Swift组件的标题滚动组件
        主要类： JKPageView、JKPageCollectionView
 
 - 使用方式一，如下：
+
 ![](https://upload-images.jianshu.io/upload_images/1728484-648cd156898b86a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
       // 1.标题
@@ -40,6 +41,7 @@ Swift组件的标题滚动组件
       view.addSubview(pageView)
       
 - 使用方式二，如下：
+
  ![JKPageCollectionView](https://upload-images.jianshu.io/upload_images/1728484-b78ac5b1f8d3789f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
         let titles = ["推荐", "LooK直播", "官方", "饭圈营业", "现场", "翻唱", "广场", "舞蹈"]
