@@ -1,5 +1,5 @@
 PODS:
-  - JKPageView (0.0.1)
+  - JKPageView (0.0.6)
 
 DEPENDENCIES:
   - JKPageView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JKPageView: a19a5d079f1efcb4369b86e7892ec0b2956b1825
+  JKPageView: 90575d9b40c3d6e9d316941781660b74a7b6bcda
 
 PODFILE CHECKSUM: 2b2c1e7d938b5e593cf22633f63f7a528f471756
 

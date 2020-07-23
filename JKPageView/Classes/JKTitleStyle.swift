@@ -71,4 +71,16 @@ public class JKTitleStyle: NSObject {
     /// 设置圆角大小
     public var coverRadius: CGFloat = 12
     
+    // MARK:- collectionView里面样式的设置
+    /// collectionView 的背景色
+    public var collectionViewBackgroundColor: UIColor = UIColor.white
+    
+    // MARK:- UIPageControl 的相关设置
+    /// UIPageControl 的高度
+    public var pageControlHeight: CGFloat = 20.0
+    /// UIPageControl当前的颜色
+    public var pageControlCurrentPageColor: UIColor = UIColor.white
+    /// UIPageControl没选中的颜色
+    public var pageIndicatorTintColor: UIColor = UIColor.white
+    
 }

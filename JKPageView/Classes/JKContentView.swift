@@ -13,7 +13,7 @@ private let kContentCellID = "kContentCellID"
 
 protocol JKContentViewDelegate: class {
     func scrollContentView(_ contentView: JKContentView, targetIndex: Int)
-    func scrollContentView(_ contentView: JKContentView, sourceIndex: Int,targetIndex: Int, progress: CGFloat)
+    func scrollContentView(sourceIndex: Int,targetIndex: Int, progress: CGFloat)
 }
 
 class JKContentView: UIView {
@@ -196,7 +196,7 @@ extension JKContentView: UICollectionViewDelegate {
         
         // 3.通知代理
         if self.delegate != nil {
-            self.delegate?.scrollContentView(self, sourceIndex: sourceIndex, targetIndex: targetIndex, progress: progress)
+            self.delegate?.scrollContentView(sourceIndex: sourceIndex, targetIndex: targetIndex, progress: progress)
         }
     }
     

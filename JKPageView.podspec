@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JKPageView'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.summary          = '标题滚动组件'
   s.description      = '这是一个标题和容器联动的组件库'
 
