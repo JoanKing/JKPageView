@@ -1,5 +1,5 @@
 ## JKPageView
-Swift组件的标题滚动组件
+Swift的标题滚动组件
 
 ## <a id="How_to_use_JKPageView"></a>How to use JKPageView
 
