@@ -6,8 +6,10 @@ Swift的标题滚动组件
 * Installation with CocoaPods：`pod 'JKPageView'`
 * Installation with [Carthage](https://github.com/Carthage/Carthage)：`github "JoanKing/JKPageView"`
 
-       主要类： JKPageView、JKPageCollectionView
-
+       主要类： 
+       JKPageView：传控制器的分组
+       JKPageCollectionView：多个collectionView的分组
+       JKTitleStyle：样式
 - 使用方式一，如下：
 
      ![](https://upload-images.jianshu.io/upload_images/1728484-648cd156898b86a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
