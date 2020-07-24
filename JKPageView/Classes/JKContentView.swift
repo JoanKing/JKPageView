@@ -165,6 +165,7 @@ extension JKContentView: UICollectionViewDelegate {
             targetIndex = sourceIndex + 1
             if targetIndex >= childVcs.count {
                 targetIndex = childVcs.count - 1
+                progress = 1
             }
             
             // 4.如果完全划过去

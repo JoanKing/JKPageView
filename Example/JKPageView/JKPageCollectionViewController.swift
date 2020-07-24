@@ -25,6 +25,8 @@ class JKPageCollectionViewController: UIViewController {
         style.isShowScrollLine = true
         style.collectionViewBackgroundColor = .yellow
         style.titleViewBackgroundColor = .yellow
+        style.pageIndicatorTintColor = .blue
+        style.pageControlCurrentPageColor = .red
         
         let layout = JKPageCollectionViewLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -34,14 +36,18 @@ class JKPageCollectionViewController: UIViewController {
         let pageCollectionView = JKPageCollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 200), titles: titles, style: style, isTitleInTop: false, layout: layout)
         pageCollectionView.dataSource = self
         pageCollectionView.backgroundColor = .brown
-        pageCollectionView.register(cell: UICollectionViewCell.self, identifier: kJKPageCollectionViewViewCellID)
+        pageCollectionView.register(cell: JKPageCollectionViewCell.self, identifier: kJKPageCollectionViewViewCellID)
         view.addSubview(pageCollectionView)
     }
-
 }
 
 // MARK:- JKPageCollectionViewDataSoure 代理
 extension JKPageCollectionViewController: JKPageCollectionViewDataSoure {
+    
+    func currentTitleIndex(targetIndex: Int) {
+        print("当前是第 \(targetIndex) 个标题 ")
+    }
+    
     func pageNumberOfSections(in collectionView: UICollectionView) -> Int {
         return titles.count
     }
@@ -52,8 +58,9 @@ extension JKPageCollectionViewController: JKPageCollectionViewDataSoure {
     
     func pageCollectionView(pageCollectionView: JKPageCollectionView, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kJKPageCollectionViewViewCellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kJKPageCollectionViewViewCellID, for: indexPath) as! JKPageCollectionViewCell
         cell.backgroundColor = UIColor.randomColor()
+        cell.label.text = "\(indexPath.section)-\(indexPath.row)"
         return cell
     }
     

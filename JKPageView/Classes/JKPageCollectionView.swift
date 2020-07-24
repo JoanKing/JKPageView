@@ -9,7 +9,6 @@ import UIKit
 
 /// 数据源
 public protocol JKPageCollectionViewDataSoure: class {
-    
     /// 返回几组
     /// - Parameter collectionView: 对象
     func pageNumberOfSections(in collectionView: UICollectionView) -> Int
@@ -19,10 +18,19 @@ public protocol JKPageCollectionViewDataSoure: class {
     func pageCollectionView(pageCollectionView: JKPageCollectionView, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     // 点击事件的响应
     func pageCollectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    /// 当前处于第几个标题
+    func currentTitleIndex(targetIndex: Int)
+}
+
+public extension JKPageCollectionViewDataSoure {
+    // 不需要必须实现
+    func currentTitleIndex(targetIndex: Int) {
+    }
 }
 
 public class JKPageCollectionView: UIView {
-    
+    /// 是否禁止
+    fileprivate var isForbidScroll: Bool = false
     /// 代理
     public weak var dataSource: JKPageCollectionViewDataSoure?
     /// 标题
@@ -39,7 +47,6 @@ public class JKPageCollectionView: UIView {
     fileprivate var pageControl: UIPageControl!
     /// 头部title
     fileprivate var titleView: JKTitleView!
-    
     /// 记录当前是第几组
     fileprivate var sourceIndexPath: IndexPath = IndexPath(item: 0, section: 0)
     
@@ -65,6 +72,14 @@ extension JKPageCollectionView {
         let titleFrame = CGRect(x: 0, y: titleY, width: bounds.width, height: style.titleHeight)
         titleView = JKTitleView(frame: titleFrame, titles: titles, style: style)
         titleView.backgroundColor = style.titleViewBackgroundColor
+       titleView.currentTitleBlock = { [weak self] (targetIndex) in
+            guard let weakSelf = self else {
+                return
+            }
+            if weakSelf.dataSource != nil {
+                weakSelf.dataSource?.currentTitleIndex(targetIndex: targetIndex)
+            }
+        }
         titleView.delegate = self
         addSubview(titleView)
         
@@ -123,6 +138,10 @@ extension JKPageCollectionView: UICollectionViewDelegate {
         }
     }
     
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isForbidScroll = false
+    }
+    
     // 当滚动视图已经结束减速时被系统自动调用
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollViewEndScroll()
@@ -152,6 +171,9 @@ extension JKPageCollectionView: UICollectionViewDelegate {
             titleView.scrollContentView(sourceIndex: sourceIndexPath.section, targetIndex: indexPath.section, progress: 1.0)
             // 2.3、记录新的 indexPath
             sourceIndexPath = indexPath
+            
+            // 2.4、通知titleView进行调整位置
+            titleView.adjustTitleContentOfSetX(targetIndex: indexPath.section)
         }
         
         // 3.根据 indexPath 设置 pageControll
@@ -161,8 +183,10 @@ extension JKPageCollectionView: UICollectionViewDelegate {
 
 extension JKPageCollectionView: JKTitleViewDelegate {
     func clickTitleView(_ pageView: JKTitleView, targetIndex: Int) {
+        isForbidScroll = true
         collectionView.scrollToItem(at: IndexPath(item: 0, section: targetIndex), at: .left, animated: true)
         collectionView.contentOffset.x -= layout.sectionInset.left
+        pageControl.currentPage = 0
     }
 }
 
@@ -172,7 +196,7 @@ extension JKPageCollectionView {
     public func register(cell: AnyClass, identifier: String) {
         collectionView.register(cell, forCellWithReuseIdentifier: identifier)
     }
-    /// xib注册
+    /// xib 注册
     public func register(nib: UINib, identifier: String) {
         
     }

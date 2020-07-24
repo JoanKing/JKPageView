@@ -12,7 +12,7 @@ public protocol JKPageViewDelegate {
     /// 点击第几个标题
     /// - Parameters:
     ///   - targetIndex: 点击的第几个
-    func clickTitleView(targetIndex: Int)
+    func currentTitleIndex(targetIndex: Int)
 }
 
 public class JKPageView: UIView {
@@ -67,7 +67,7 @@ public extension JKPageView {
                 return
             }
             if weakSelf.delegate != nil {
-                weakSelf.delegate?.clickTitleView(targetIndex: targetIndex)
+                weakSelf.delegate?.currentTitleIndex(targetIndex: targetIndex)
             }
         }
         titleView?.backgroundColor = self.style.titleViewBackgroundColor

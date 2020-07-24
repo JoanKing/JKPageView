@@ -228,8 +228,7 @@ extension JKTitleView {
         // 2.获取之前的Label
         let oldLabel = titleLabels[currentIndex]
         
-        
-        // 2.处理标题点击后的事件
+        // 3.处理标题点击后的事件
         adjustTitleLabel(targetIndex: targetLabel.tag - 100)
         
         // 3.调整 bottomLine 的位置
@@ -240,13 +239,13 @@ extension JKTitleView {
             }
         }
         
-        // 8.调整比例
+        // 4.调整比例
         if style.isNeedScale {
             oldLabel.transform = CGAffineTransform.identity
             targetLabel.transform = CGAffineTransform(scaleX: style.scaleRange, y: style.scaleRange)
         }
         
-        // 9.遮盖移动
+        // 5.遮盖移动
         if style.isShowCover || style.showStyle == .coverStyle {
             let coverX = style.isScrollEnable ? (targetLabel.frame.origin.x - style.coverMargin) : targetLabel.frame.origin.x
             let coverW = style.isScrollEnable ? (targetLabel.frame.width + style.coverMargin * 2) : targetLabel.frame.width
@@ -256,7 +255,7 @@ extension JKTitleView {
             })
         }
         
-        // 4.触发代理 让 界面跟着滚动
+        // 6.触发代理 让 界面跟着滚动
         if self.delegate != nil {
             self.delegate?.clickTitleView(self, targetIndex: currentIndex)
         }
@@ -318,17 +317,18 @@ extension JKTitleView {
 // MARK:- 实现页面滚动的代理
 extension JKTitleView: JKContentViewDelegate {
     func scrollContentView(sourceIndex: Int, targetIndex: Int, progress: CGFloat) {
+        
+        // print("sourceIndex=\(sourceIndex) targetIndex=\(targetIndex) progress=\(progress)")
 
         // 1.获取Label
         // 获取点击的 title 的 Label
         let targetLabel = titleLabels[targetIndex]
         // 获取之前点击的 Label
         let oldlabel = titleLabels[sourceIndex]
-        
         // 2.颜色渐变
-        targetLabel.textColor = UIColor.color(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
         oldlabel.textColor = UIColor.color(r: selectedRGB.0 - deltaRGB.0 * progress, g: selectedRGB.1 - deltaRGB.1 * progress, b: selectedRGB.2 - deltaRGB.2 * progress)
-        
+        targetLabel.textColor = UIColor.color(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
+
         // 3.记录最新的index
         currentIndex = targetIndex
         
@@ -355,11 +355,21 @@ extension JKTitleView: JKContentViewDelegate {
     }
     
     func scrollContentView(_ contentView: JKContentView, targetIndex: Int) {
-        // 判断是否需要滚动
+        /// 调整标题的位置
+        adjustTitleContentOfSetX(targetIndex: targetIndex)
+    }
+}
+
+extension JKTitleView {
+    
+    /// 调整标题的位置
+    /// - Parameter targetIndex: 当前的位置
+    func adjustTitleContentOfSetX(targetIndex: Int) {
+        // 1.判断是否需要滚动
         guard style.isScrollEnable else {
             return
         }
-        // 传出去点击的第几个
+        // 2.传出去当前是第几个
         if currentTitleBlock != nil {
             currentTitleBlock!(targetIndex)
         }

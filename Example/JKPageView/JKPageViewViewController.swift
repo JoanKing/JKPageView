@@ -15,7 +15,7 @@ class JKPageViewViewController: UIViewController {
         self.view.backgroundColor = .white
         self.edgesForExtendedLayout = []
         // 1.标题
-        let titles = ["推荐", "LooK直播", "官方", "饭圈营业", "现场", "翻唱", "广场", "舞蹈"]
+        let titles = ["推荐", "LooK直播", "官方", "饭圈营业", "现场", "翻唱", "广场", "舞蹈", "现场", "翻唱", "广场", "舞蹈"]
         
         // 2.所有的子控制器
         var childVcs = [UIViewController]()
@@ -32,7 +32,7 @@ class JKPageViewViewController: UIViewController {
         style.isNeedScale = false
         style.isShowSplitLine = true
         style.splitLineHeight = 1
-        style.showStyle = .coverStyle
+        style.showStyle = .customStyle
         
         // 3.pageView的frame
         let pageFrame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - UIApplication.shared.statusBarFrame.height - 44)
@@ -47,7 +47,7 @@ class JKPageViewViewController: UIViewController {
 
 extension JKPageViewViewController: JKPageViewDelegate {
     
-    func clickTitleView(targetIndex: Int) {
-        print("---------点击了：第 \(targetIndex) 个")
+    func currentTitleIndex(targetIndex: Int) {
+         // print("当前是第 \(targetIndex) 个标题 ")
     }
 }

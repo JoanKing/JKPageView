@@ -17,6 +17,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		E29D728E24CA4CFC0064845F /* JKPageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D728D24CA4CFC0064845F /* JKPageViewViewController.swift */; };
 		E29D729024CA4D0C0064845F /* JKPageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D728F24CA4D0C0064845F /* JKPageCollectionViewController.swift */; };
+		E29D729524CA90DE0064845F /* JKPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D729424CA90DE0064845F /* JKPageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D44EAD0166AA5E97B0660BF7 /* Pods-JKPageView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKPageView_Example.debug.xcconfig"; path = "Target Support Files/Pods-JKPageView_Example/Pods-JKPageView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E29D728D24CA4CFC0064845F /* JKPageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKPageViewViewController.swift; sourceTree = "<group>"; };
 		E29D728F24CA4D0C0064845F /* JKPageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKPageCollectionViewController.swift; sourceTree = "<group>"; };
+		E29D729424CA90DE0064845F /* JKPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKPageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				E29D728D24CA4CFC0064845F /* JKPageViewViewController.swift */,
 				E29D728F24CA4D0C0064845F /* JKPageCollectionViewController.swift */,
+				E29D729424CA90DE0064845F /* JKPageCollectionViewCell.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -342,6 +345,7 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				E29D728E24CA4CFC0064845F /* JKPageViewViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				E29D729524CA90DE0064845F /* JKPageCollectionViewCell.swift in Sources */,
 				E29D729024CA4D0C0064845F /* JKPageCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
