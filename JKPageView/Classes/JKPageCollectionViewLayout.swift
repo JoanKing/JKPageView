@@ -10,9 +10,9 @@ import UIKit
 public class JKPageCollectionViewLayout: UICollectionViewFlowLayout {
 
     /// 几列，默认 4 列
-    var cols: Int = 4
+    public var cols: Int = 4
     /// 几行，默认 2 行
-    var rows: Int = 2
+    public var rows: Int = 2
     /// 保存 UICollectionViewlazyLayoutAttributes 的数组
     fileprivate lazy var cellAttributes: [UICollectionViewLayoutAttributes] = [UICollectionViewLayoutAttributes]()
     /// 最大的宽度
