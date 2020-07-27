@@ -16,13 +16,18 @@ public protocol JKPageCollectionViewDataSoure: class {
     func pageCollectionView(pageCollectionView: JKPageCollectionView, collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     /// 返回外面自定义的 cell
     func pageCollectionView(pageCollectionView: JKPageCollectionView, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-    // 点击事件的响应
+}
+
+/// 代理
+public protocol JKPageCollectionViewDelegate: class {
+    /// 点击事件的响应
     func pageCollectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     /// 当前处于第几个标题
     func currentTitleIndex(targetIndex: Int)
 }
 
-public extension JKPageCollectionViewDataSoure {
+/// 不需要实现的协议
+public extension JKPageCollectionViewDelegate {
     // 不需要必须实现
     func currentTitleIndex(targetIndex: Int) {
     }
@@ -33,6 +38,8 @@ public class JKPageCollectionView: UIView {
     fileprivate var isForbidScroll: Bool = false
     /// 代理
     public weak var dataSource: JKPageCollectionViewDataSoure?
+    /// 代理
+    public weak var delegate: JKPageCollectionViewDelegate?
     /// 标题
     fileprivate var titles: [String]
     /// 是否标题在顶部
@@ -76,8 +83,8 @@ extension JKPageCollectionView {
             guard let weakSelf = self else {
                 return
             }
-            if weakSelf.dataSource != nil {
-                weakSelf.dataSource?.currentTitleIndex(targetIndex: targetIndex)
+            if weakSelf.delegate != nil {
+                weakSelf.delegate!.currentTitleIndex(targetIndex: targetIndex)
             }
         }
         titleView.delegate = self
@@ -116,12 +123,10 @@ extension JKPageCollectionView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         let itemCount = dataSource?.pageCollectionView(pageCollectionView: self, collectionView: collectionView, numberOfItemsInSection: section) ?? 0
-        
         if section == 0 {
             // 给第一组设置页码
             pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
         }
-        
         return itemCount
     }
     
@@ -133,8 +138,8 @@ extension JKPageCollectionView: UICollectionViewDataSource {
 extension JKPageCollectionView: UICollectionViewDelegate {
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if self.dataSource != nil {
-            self.dataSource!.pageCollectionView(collectionView, didSelectItemAt: indexPath)
+        if self.delegate != nil {
+            self.delegate!.pageCollectionView(collectionView, didSelectItemAt: indexPath)
         }
     }
     
@@ -171,11 +176,9 @@ extension JKPageCollectionView: UICollectionViewDelegate {
             titleView.scrollContentView(sourceIndex: sourceIndexPath.section, targetIndex: indexPath.section, progress: 1.0)
             // 2.3、记录新的 indexPath
             sourceIndexPath = indexPath
-            
             // 2.4、通知titleView进行调整位置
             titleView.adjustTitleContentOfSetX(targetIndex: indexPath.section)
         }
-        
         // 3.根据 indexPath 设置 pageControll
         pageControl.currentPage = indexPath.item / (layout.cols * layout.rows)
     }
@@ -198,6 +201,6 @@ extension JKPageCollectionView {
     }
     /// xib 注册
     public func register(nib: UINib, identifier: String) {
-        
+        collectionView.register(nib, forCellWithReuseIdentifier: identifier)
     }
 }

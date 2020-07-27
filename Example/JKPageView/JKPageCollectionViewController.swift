@@ -35,6 +35,7 @@ class JKPageCollectionViewController: UIViewController {
         
         let pageCollectionView = JKPageCollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 200), titles: titles, style: style, isTitleInTop: false, layout: layout)
         pageCollectionView.dataSource = self
+        pageCollectionView.delegate = self
         pageCollectionView.backgroundColor = .brown
         pageCollectionView.register(cell: JKPageCollectionViewCell.self, identifier: kJKPageCollectionViewViewCellID)
         view.addSubview(pageCollectionView)
@@ -43,10 +44,6 @@ class JKPageCollectionViewController: UIViewController {
 
 // MARK:- JKPageCollectionViewDataSoure 代理
 extension JKPageCollectionViewController: JKPageCollectionViewDataSoure {
-    
-    func currentTitleIndex(targetIndex: Int) {
-        print("当前是第 \(targetIndex) 个标题 ")
-    }
     
     func pageNumberOfSections(in collectionView: UICollectionView) -> Int {
         return titles.count
@@ -63,8 +60,15 @@ extension JKPageCollectionViewController: JKPageCollectionViewDataSoure {
         cell.label.text = "\(indexPath.section)-\(indexPath.row)"
         return cell
     }
-    
+}
+
+extension JKPageCollectionViewController: JKPageCollectionViewDelegate {
     func pageCollectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("点击的第 \(indexPath.section) 组 第 \(indexPath.row) 个")
+         print("点击的第 \(indexPath.section) 组 第 \(indexPath.row) 个")
     }
+    
+    func currentTitleIndex(targetIndex: Int) {
+        print("当前是第 \(targetIndex) 个标题 ")
+    }
+    
 }
