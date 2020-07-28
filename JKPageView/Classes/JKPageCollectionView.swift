@@ -203,4 +203,9 @@ extension JKPageCollectionView {
     public func register(nib: UINib, identifier: String) {
         collectionView.register(nib, forCellWithReuseIdentifier: identifier)
     }
+    
+    /// 重新访问数据源（刷新数据）
+    public func reloadData() {
+        collectionView.reloadData()
+    }
 }
