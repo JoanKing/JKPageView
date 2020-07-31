@@ -111,12 +111,15 @@ extension JKContentView: UICollectionViewDelegate {
     // 当滚动视图已经结束减速时被系统自动调用
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         contentEndScroll()
+        // scrollView.isScrollEnabled = true
     }
     // 当滚动视图已经结束拖拽时被系统自动调用
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             // 没有减速就代表滚动停止了
             contentEndScroll()
+        } else {
+            // scrollView.isScrollEnabled = false
         }
     }
     

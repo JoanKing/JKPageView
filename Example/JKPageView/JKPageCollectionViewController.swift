@@ -50,7 +50,7 @@ extension JKPageCollectionViewController: JKPageCollectionViewDataSoure {
     }
     
     func pageCollectionView(pageCollectionView: JKPageCollectionView, collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 19
+        return section == 2 ? 12 : 19
     }
     
     func pageCollectionView(pageCollectionView: JKPageCollectionView, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

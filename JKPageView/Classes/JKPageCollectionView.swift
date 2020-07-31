@@ -189,6 +189,8 @@ extension JKPageCollectionView: JKTitleViewDelegate {
         isForbidScroll = true
         collectionView.scrollToItem(at: IndexPath(item: 0, section: targetIndex), at: .left, animated: true)
         collectionView.contentOffset.x -= layout.sectionInset.left
+        let itemCount = dataSource?.pageCollectionView(pageCollectionView: self, collectionView: collectionView, numberOfItemsInSection: targetIndex) ?? 0
+        pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
         pageControl.currentPage = 0
     }
 }
