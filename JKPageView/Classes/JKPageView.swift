@@ -66,9 +66,7 @@ public extension JKPageView {
             guard let weakSelf = self else {
                 return
             }
-            if weakSelf.delegate != nil {
-                weakSelf.delegate?.currentTitleIndex(targetIndex: targetIndex)
-            }
+            weakSelf.delegate?.currentTitleIndex(targetIndex: targetIndex)
         }
         titleView?.backgroundColor = self.style.titleViewBackgroundColor
         addSubview(titleView!)

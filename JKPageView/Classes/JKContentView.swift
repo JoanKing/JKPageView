@@ -199,9 +199,7 @@ extension JKContentView: UICollectionViewDelegate {
         }
         
         // 3.通知代理
-        if self.delegate != nil {
-            self.delegate?.scrollContentView(sourceIndex: sourceIndex, targetIndex: targetIndex, progress: progress)
-        }
+        self.delegate?.scrollContentView(sourceIndex: sourceIndex, targetIndex: targetIndex, progress: progress)
     }
     
     /// 停止了滚动
@@ -211,9 +209,7 @@ extension JKContentView: UICollectionViewDelegate {
         let currentIndex = Int(collectionView.contentOffset.x / collectionView.bounds.width)
         
         // 2、通知titleView进行调整
-        if self.delegate != nil {
-            self.delegate?.scrollContentView(self, targetIndex: currentIndex)
-        }
+        self.delegate?.scrollContentView(self, targetIndex: currentIndex)
     }
 }
 

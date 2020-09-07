@@ -256,9 +256,7 @@ extension JKTitleView {
         }
         
         // 6.触发代理 让 界面跟着滚动
-        if self.delegate != nil {
-            self.delegate?.clickTitleView(self, targetIndex: currentIndex)
-        }
+        self.delegate?.clickTitleView(self, targetIndex: currentIndex)
     }
     
     /// 调整label的为重

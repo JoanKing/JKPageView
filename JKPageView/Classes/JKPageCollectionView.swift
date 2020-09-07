@@ -83,9 +83,7 @@ extension JKPageCollectionView {
             guard let weakSelf = self else {
                 return
             }
-            if weakSelf.delegate != nil {
-                weakSelf.delegate!.currentTitleIndex(targetIndex: targetIndex)
-            }
+            weakSelf.delegate?.currentTitleIndex(targetIndex: targetIndex)
         }
         titleView.delegate = self
         addSubview(titleView)
@@ -138,9 +136,7 @@ extension JKPageCollectionView: UICollectionViewDataSource {
 extension JKPageCollectionView: UICollectionViewDelegate {
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if self.delegate != nil {
-            self.delegate!.pageCollectionView(collectionView, didSelectItemAt: indexPath)
-        }
+        self.delegate?.pageCollectionView(collectionView, didSelectItemAt: indexPath)
     }
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
