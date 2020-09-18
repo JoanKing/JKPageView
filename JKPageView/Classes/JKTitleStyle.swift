@@ -23,6 +23,8 @@ public class JKTitleStyle: NSObject {
     // MARK:- 基本的配置
     /// 标题的高度
     public var titleHeight: CGFloat = 44.0
+    /// 顶部titile的宽度(一般不用，只有在title右侧有自定义的 View 时候才会用到)
+    public var titleWidth: CGFloat = UIScreen.main.bounds.width
     /// 头部 titleView 的背景色
     public var titleViewBackgroundColor: UIColor = UIColor.white
     /// 默认的颜色
@@ -82,5 +84,9 @@ public class JKTitleStyle: NSObject {
     public var pageControlCurrentPageColor: UIColor = UIColor.gray
     /// UIPageControl没选中的颜色
     public var pageIndicatorTintColor: UIColor = UIColor.white
+    
+    // MARK:- 设置了 titleWidth 后才有效，而且是
+    /// 普通的视图(添加到title)
+    public var normalView: UIView?
     
 }

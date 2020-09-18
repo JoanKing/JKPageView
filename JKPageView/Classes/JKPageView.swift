@@ -70,6 +70,11 @@ public extension JKPageView {
         }
         titleView?.backgroundColor = self.style.titleViewBackgroundColor
         addSubview(titleView!)
+        
+        // 添加自定的德文头部视图
+        if style.normalView != nil && style.titleWidth < UIScreen.main.bounds.width {
+            addSubview(style.normalView!)
+        }
     }
     
     /// 内容的 UI

@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         self.title = "JKPageView的使用"
         self.edgesForExtendedLayout = []
         self.view.backgroundColor = .white
-        titles = ["JKPageView样式", "JKPageCollectionView样式"]
+        titles = ["JKPageView样式", "JKPageView添加头部自定义视图", "JKPageCollectionView样式"]
         self.view.addSubview(tableView)
     }
 }
@@ -73,6 +73,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         } else if title == "JKPageCollectionView样式" {
             let pageViewController = JKPageCollectionViewController()
             navigationController?.pushViewController(pageViewController, animated: true)
+        } else if title == "JKPageView添加头部自定义视图" {
+            let pageNormalViewController = JKPageNormalViewController()
+            navigationController?.pushViewController(pageNormalViewController, animated: true)
         } else {
             print("----等待更新----")
         }

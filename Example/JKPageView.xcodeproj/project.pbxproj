@@ -15,6 +15,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		846D70FD25145E8C00A0A6C1 /* JKPageNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846D70FC25145E8C00A0A6C1 /* JKPageNormalViewController.swift */; };
 		E29D728E24CA4CFC0064845F /* JKPageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D728D24CA4CFC0064845F /* JKPageViewViewController.swift */; };
 		E29D729024CA4D0C0064845F /* JKPageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D728F24CA4D0C0064845F /* JKPageCollectionViewController.swift */; };
 		E29D729524CA90DE0064845F /* JKPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D729424CA90DE0064845F /* JKPageCollectionViewCell.swift */; };
@@ -48,6 +49,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6D8DEA65FE69381EC1EB2805 /* Pods-JKPageView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKPageView_Example.release.xcconfig"; path = "Target Support Files/Pods-JKPageView_Example/Pods-JKPageView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6E9E8EF0A04EAEEA674015BD /* Pods-JKPageView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKPageView_Tests.release.xcconfig"; path = "Target Support Files/Pods-JKPageView_Tests/Pods-JKPageView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		846D70FC25145E8C00A0A6C1 /* JKPageNormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKPageNormalViewController.swift; sourceTree = "<group>"; };
 		ABC37AA2957660779D4C5362 /* Pods-JKPageView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKPageView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-JKPageView_Tests/Pods-JKPageView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D44EAD0166AA5E97B0660BF7 /* Pods-JKPageView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKPageView_Example.debug.xcconfig"; path = "Target Support Files/Pods-JKPageView_Example/Pods-JKPageView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E29D728D24CA4CFC0064845F /* JKPageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKPageViewViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				E29D728D24CA4CFC0064845F /* JKPageViewViewController.swift */,
+				846D70FC25145E8C00A0A6C1 /* JKPageNormalViewController.swift */,
 				E29D728F24CA4D0C0064845F /* JKPageCollectionViewController.swift */,
 				E29D729424CA90DE0064845F /* JKPageCollectionViewCell.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -344,6 +347,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				E29D728E24CA4CFC0064845F /* JKPageViewViewController.swift in Sources */,
+				846D70FD25145E8C00A0A6C1 /* JKPageNormalViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				E29D729524CA90DE0064845F /* JKPageCollectionViewCell.swift in Sources */,
 				E29D729024CA4D0C0064845F /* JKPageCollectionViewController.swift in Sources */,

@@ -121,7 +121,7 @@ public extension UIColor {
 }
 
 // MARK:- 个性化的颜色设置
-extension UIColor {
+public extension UIColor {
     
     // MARK: 背景灰色
     static func JKGlobalColor() -> UIColor {
