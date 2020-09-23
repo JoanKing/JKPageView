@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: 有关颜色的判断
-public extension UIColor {
+extension UIColor {
     
     // MARK:- 自定义RGBA的颜色
     /// 自定义初始化器设置 Color
@@ -121,7 +121,7 @@ public extension UIColor {
 }
 
 // MARK:- 个性化的颜色设置
-public extension UIColor {
+extension UIColor {
     
     // MARK: 背景灰色
     static func JKGlobalColor() -> UIColor {
