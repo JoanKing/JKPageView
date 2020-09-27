@@ -64,6 +64,7 @@ Swift的标题滚动组件
       view.addSubview(pageCollectionView)
       
 - 使用方式三，如下：
+
     ![自定义视图](https://upload-images.jianshu.io/upload_images/1728484-96fb321cde7e84ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
     
        // 1.标题
