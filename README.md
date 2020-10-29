@@ -63,13 +63,3 @@ Swift的标题滚动组件
       pageCollectionView.register(cell: UICollectionViewCell.self, identifier: kAnchorViewControllerCellID)
       view.addSubview(pageCollectionView)
         
-## JKPageView 使用注意点
-  
-- JKTitleStyle 样式里面的标题的选中颜色和未选中的颜色必须是 RGB，原因是要做文字颜色的渐变
-    
-      /// 默认的颜色
-      public var normalColor: UIColor = UIColor.color(r: 0, g: 0, b: 0)
-      /// 选中的颜色
-      public var selectedColor: UIColor = UIColor.color(r: 255, g: 127, b: 0)
-  
-  

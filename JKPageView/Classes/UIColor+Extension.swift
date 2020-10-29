@@ -42,23 +42,6 @@ extension UIColor {
         return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
     }
     
-    // MARK:- 随机色
-    /// 随机色
-    /// - Returns: 返回颜色
-    static func randomColor() -> UIColor {
-        return color(r: CGFloat(arc4random()%256) , g: CGFloat(arc4random()%256), b: CGFloat(arc4random()%256), a: 1.0)
-    }
-    
-    // MARK:- 十六进制颜色的设置
-    static func hexColor(hex: String, alpha: CGFloat = 1.0) -> UIColor {
-        let newColor = hexCustomColor(hex: hex)
-        guard let r = newColor.r, let g = newColor.g, let b = newColor.b else {
-            assert(false, "颜色值有误")
-            return .white
-        }
-        return color(r: r, g: g, b: b, a: alpha)
-    }
-    
     // MARK: 获取颜色的渐变的 RGB
     /// 获取颜色的渐变色
     /// - Parameters:
@@ -67,17 +50,37 @@ extension UIColor {
     /// - Returns: 返回渐变的 RGB
     static func getRGBDelta(_ firstColor: UIColor, _ secondColor: UIColor) -> (CGFloat, CGFloat, CGFloat) {
         
-        let firstRGB = firstColor.getRGB()
-        let secondRGB = secondColor.getRGB()
+        let firstRGB = firstColor.colorToRGBA()
+        let secondRGB = secondColor.colorToRGBA()
         
-        return (firstRGB.0 - secondRGB.0, firstRGB.1 - secondRGB.1, firstRGB.2 - secondRGB.2)
+        guard let firstR = firstRGB.r, let firstG = firstRGB.g, let firstB = firstRGB.b, let secondR = secondRGB.r, let secondG = secondRGB.g, let secondB = secondRGB.b  else {
+            return (0,0,0)
+        }
+        return (firstR - secondR, firstG - secondG, firstB - secondB)
     }
     
-    func getRGB() -> (CGFloat, CGFloat, CGFloat) {
-        guard let cpms = cgColor.components else {
-            fatalError("保证普通颜色是RGB方式传入")
+    // MARK: color 转 RGBA
+    /// color 转 RGBA
+    /// - Returns: 返回对应的 RGBA
+    func colorToRGBA() -> (r: CGFloat?, g: CGFloat?, b: CGFloat?, a: CGFloat?) {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        let multiplier = CGFloat(255.999999)
+        
+        guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+            return (nil, nil, nil, nil)
         }
-        return (cpms[0] * 255, cpms[1] * 255, cpms[2] * 255)
+        return (toCGFloat(string: "\(Int(red * multiplier))"), toCGFloat(string: "\(Int(green * multiplier))"), toCGFloat(string: "\(Int(blue * multiplier))"), alpha)
+    }
+    
+    func toCGFloat(string: String) -> CGFloat? {
+        if let doubleValue = Double(string) {
+           return CGFloat(doubleValue)
+        }
+        return nil
     }
     
     // MARK:- 私有 - RGBA的颜色设置
@@ -120,26 +123,3 @@ extension UIColor {
     }
 }
 
-// MARK:- 个性化的颜色设置
-extension UIColor {
-    
-    // MARK: 背景灰色
-    static func JKGlobalColor() -> UIColor {
-        return color(r: 240, g: 240, b: 240, a: 1)
-    }
-    
-    // MARK: 红色
-    static func JKGlobalRedColor() -> UIColor {
-        return color(r: 245, g: 80, b: 83, a: 1.0)
-    }
-    
-    // MARK: 字体的灰色
-    static func JKTextGayColor() -> UIColor {
-        return color(r: 140, g: 140, b: 140, a: 1.0)
-    }
-    
-    // MARK: 字体的蓝色
-    static func JKTextzhuBlueColor() -> UIColor {
-        return color(r: 0, g: 150, b: 255, a: 1.0)
-    }
-}

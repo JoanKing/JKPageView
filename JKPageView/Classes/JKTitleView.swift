@@ -67,8 +67,8 @@ class JKTitleView: UIView {
     
     // MARK: 计算属性
     fileprivate lazy var deltaRGB = UIColor.getRGBDelta(style.selectedColor, style.normalColor)
-    fileprivate lazy var selectedRGB = style.selectedColor.getRGB()
-    fileprivate lazy var normalRGB = style.normalColor.getRGB()
+    fileprivate lazy var selectedRGB = style.selectedColor.colorToRGBA()
+    fileprivate lazy var normalRGB = style.normalColor.colorToRGBA()
     
     init(frame: CGRect, titles: [String], style: JKTitleStyle) {
         self.titles = titles
@@ -324,8 +324,11 @@ extension JKTitleView: JKContentViewDelegate {
         // 获取之前点击的 Label
         let oldlabel = titleLabels[sourceIndex]
         // 2.颜色渐变
-        oldlabel.textColor = UIColor.color(r: selectedRGB.0 - deltaRGB.0 * progress, g: selectedRGB.1 - deltaRGB.1 * progress, b: selectedRGB.2 - deltaRGB.2 * progress)
-        targetLabel.textColor = UIColor.color(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
+        guard let selectedR = selectedRGB.r, let selectedtG = selectedRGB.g, let selectedB = selectedRGB.b, let normalR = normalRGB.r, let normalG = normalRGB.g, let normalB = normalRGB.b  else {
+            return
+        }
+        oldlabel.textColor = UIColor.color(r: selectedR - deltaRGB.0 * progress, g: selectedtG - deltaRGB.1 * progress, b: selectedB - deltaRGB.2 * progress)
+        targetLabel.textColor = UIColor.color(r: normalR + deltaRGB.0 * progress, g: normalG + deltaRGB.1 * progress, b: normalB + deltaRGB.2 * progress)
 
         // 3.记录最新的index
         currentIndex = targetIndex
