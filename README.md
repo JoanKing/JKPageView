@@ -62,4 +62,43 @@ Swift的标题滚动组件
       pageCollectionView.dataSource = self
       pageCollectionView.register(cell: UICollectionViewCell.self, identifier: kAnchorViewControllerCellID)
       view.addSubview(pageCollectionView)
+      
+- 使用方式三，如下：
+
+    ![自定义视图](https://upload-images.jianshu.io/upload_images/1728484-96fb321cde7e84ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+    
+       // 1.标题
+       let titles = ["推荐", "LooK直播", "官方", "饭圈营业", "现场", "翻唱", "广场", "舞蹈", "现场", "翻唱", "广场", "舞蹈"]
+        
+       // 2.所有的子控制器
+       var childVcs = [UIViewController]()
+        
+       for _ in 0..<titles.count {
+           let vc = UIViewController()
+           vc.view.backgroundColor = UIColor.randomColor()
+           childVcs.append(vc)
+       }
+        
+       // 自定义一个 view
+       let normalView = UIView(frame: CGRect(x: UIScreen.main.bounds.width - 100, y: 0, width: 100, height: 60))
+       normalView.backgroundColor = .brown
+        
+       let style = JKTitleStyle()
+       style.isScrollEnable = true
+       style.isShowScrollLine = true
+       style.isNeedScale = false
+       style.isShowSplitLine = true
+       style.splitLineHeight = 1
+       style.showStyle = .customStyle
+       style.titleHeight = 60
+       style.titleWidth = UIScreen.main.bounds.width - 100
+       style.normalView = normalView
+        
+       // 3.pageView的frame
+       let pageFrame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - UIApplication.shared.statusBarFrame.height - 44)
+        
+       // 4.创建JKPageView，并且添加到控制器 view 中
+       let pageView = JKPageView(frame: pageFrame, titles: titles, childVcs: childVcs, parentVc: self, style: style)
+       pageView.delegate = self
+       view.addSubview(pageView)
         
