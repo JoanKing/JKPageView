@@ -60,7 +60,7 @@ public extension JKPageView {
     
     /// 标题的 UI
     fileprivate func setupTitleView() {
-        let titleFrame = CGRect(x: 0, y: 0, width: bounds.width, height: style.titleHeight)
+        let titleFrame = CGRect(x: 0, y: 0, width: style.titleWidth, height: style.titleHeight)
         titleView = JKTitleView(frame: titleFrame, titles: self.titles, style: style)
         titleView?.currentTitleBlock = { [weak self] (targetIndex) in
             guard let weakSelf = self else {
